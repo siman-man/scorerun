@@ -1,0 +1,35 @@
+/* スタイルの例 */
+ul.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-align: center;
+  /* テキストをセンターに配置 */
+}
+
+ul.navbar li {
+  display: inline-block;
+  /* リストアイテムを横並びに配置 */
+}
+
+ul.navbar li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* 追加のスタイル */
+table {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
