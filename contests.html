@@ -18,14 +18,13 @@
     <p>
       試験的に作成
     </p>
-    <table>
+    <table id="sortableTable">
       <thead>
         <tr>
-          <th>コンテスト名</th>
-          <th>問題名</th>
-          <th>ユーザ名</th>
-          <th>得点</th>
-          <th>提出コード</th>
+          <th onclick="sortTable(0, 'str')">コンテスト名</th>
+          <th onclick="sortTable(1, 'str')">問題名</th>
+          <th onclick="sortTable(2, 'str')">ユーザ名</th>
+          <th onclick="sortTable(3, 'int')">得点</th>
         </tr>
       </thead>
       <tbody>
@@ -284,5 +283,45 @@
       </tbody>
     </table>
   </div>
+    <script>
+    // 列ごとの現在のソート状態を追跡するオブジェクト
+    var currentSort = {
+      column: null,
+      direction: 'asc'
+    };
+
+    function sortTable(columnIndex, dataType) {
+      var table = document.getElementById("sortableTable");
+      var rows = Array.from(table.getElementsByTagName("tr")).slice(1); // ヘッダーを除外して行を取得
+      var sortedRows;
+
+      // クリックされた列が前回と同じであれば、ソートの方向を切り替える
+      if (currentSort.column === columnIndex) {
+        currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+      } else {
+        currentSort.direction = 'asc';
+      }
+      currentSort.column = columnIndex;
+
+      // ソート関数
+      var sortFunction = function (a, b) {
+        var aValue = dataType === 'int' ? parseInt(a.getElementsByTagName("td")[columnIndex].textContent) :
+          a.getElementsByTagName("td")[columnIndex].textContent.toLowerCase();
+        var bValue = dataType === 'int' ? parseInt(b.getElementsByTagName("td")[columnIndex].textContent) :
+          b.getElementsByTagName("td")[columnIndex].textContent.toLowerCase();
+
+        if (aValue < bValue) return currentSort.direction === 'asc' ? -1 : 1;
+        if (aValue > bValue) return currentSort.direction === 'asc' ? 1 : -1;
+        return 0;
+      };
+
+      sortedRows = rows.sort(sortFunction);
+
+      // ソート済みの行をテーブルに再配置
+      sortedRows.forEach(function (row) {
+        table.getElementsByTagName("tbody")[0].appendChild(row);
+      });
+    }
+  </script>
 </body>
 </html>
