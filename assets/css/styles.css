@@ -20,6 +20,11 @@ ul.navbar li a {
   text-decoration: none;
 }
 
+.last-updated {
+  font-size: 1.5rem; /* 最終更新日のテキストサイズを小さく設定 */
+  margin-bottom: 2rem; /* 下側に余白を設定 */
+}
+
 /* 追加のスタイル */
 table {
   margin-top: 20px;
