@@ -43,3 +43,7 @@ td {
 .top-aligned {
   vertical-align: top; /* Align content to the top */
 }
+
+.github-icon i {
+  font-size: 18px; /* アイコンのサイズを調整します */
+}
