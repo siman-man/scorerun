@@ -1,0 +1,612 @@
+<!doctype html>
+<html>
+<head>
+  <title>scorerun</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+</head>
+<body>
+  <!-- header.erb -->
+  <nav class="navbar">
+    <section class="container">
+      <ul class="navbar">
+        <li><a href="index.html">延長戦対応</a></li>
+        <li><a href="contests.html">延長戦非対応</a></li>
+        <li><a href="ranking.html">ランキング</a></li>
+      </ul>
+      <div class="last-updated">最終更新日: 2024-02-28</div>
+    </section>
+  </nav>
+  <div class="container">
+    <table id="sortableTable">
+      <thead>
+        <tr>
+          <th>順位</th>
+          <th>ユーザ名</th>
+          <th>トップスコア保持数</th>
+          <th>コンテスト名</th>
+          <th>問題名</th>
+          <th>スコア</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="12" class="top-aligned">1</td>
+          <td rowspan="12" class="top-aligned"><a href="https://atcoder.jp/users/rhoo/?contestType=heuristic">rhoo</a></td>
+          <td rowspan="12" class="top-aligned">12</td>
+          <td><a href="https://atcoder.jp/contests/ahc024/standings/extended">ahc024</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc024/standings/extended">Topological Map</a></td>
+          <td>337683</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/ahc005/standings/extended">ahc005</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc005/standings/extended">Patrolling</a></td>
+          <td>22327711</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/ahc002/standings/extended">ahc002</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc002/standings/extended">Walking on Tiles</a></td>
+          <td>6389988</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/future-contest-2023-final/standings/extended">future-contest-2023-final</a></td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2023-final/standings/extended">Dowsing Rod</a></td>
+          <td>1559685</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/intro-heuristics/standings/extended">intro-heuristics</a></td>
+          <td><a href="https://atcoder.jp/contests/intro-heuristics/standings/extended">AtCoder Contest Scheduling</a></td>
+          <td>128167549</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/hokudai-hitachi2022/submissions?f.Task=hokudai_hitachi2022_a&desc=true&orderBy=score">hokudai-hitachi2022</a></td>
+          <td><a href="https://atcoder.jp/contests/hokudai-hitachi2022/submissions?f.Task=hokudai_hitachi2022_a&desc=true&orderBy=score">A - Scheduling of Agricultural Machinery Sharing</a></td>
+          <td>16574198164688</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2018-qual/submissions?f.Task=rco_contest_2018_qual_a&desc=true&orderBy=score">rco-contest-2018-qual</a></td>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2018-qual/submissions?f.Task=rco_contest_2018_qual_a&desc=true&orderBy=score">A - ゲーム実況者Xの挑戦</a></td>
+          <td>328524</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2018-qual/submissions?f.Task=rco_contest_2018_qual_b&desc=true&orderBy=score">rco-contest-2018-qual</a></td>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2018-qual/submissions?f.Task=rco_contest_2018_qual_b&desc=true&orderBy=score">B - ゲーム実況者Xのデフラグ</a></td>
+          <td>451288</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2017-final-open/submissions?f.Task=rco_contest_2017_final_a&desc=true&orderBy=score">rco-contest-2017-final-open</a></td>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2017-final-open/submissions?f.Task=rco_contest_2017_final_a&desc=true&orderBy=score">A - 石油王Xの憂鬱</a></td>
+          <td>7815068</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2017-qual/submissions?f.Task=rco_contest_2017_qual_a&desc=true&orderBy=score">rco-contest-2017-qual</a></td>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2017-qual/submissions?f.Task=rco_contest_2017_qual_a&desc=true&orderBy=score">A - Multiple Pieces</a></td>
+          <td>970404</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2017-qual/submissions?f.Task=rco_contest_2017_qual_b&desc=true&orderBy=score">rco-contest-2017-qual</a></td>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2017-qual/submissions?f.Task=rco_contest_2017_qual_b&desc=true&orderBy=score">B - Food Collector</a></td>
+          <td>20877</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/chokudai003/submissions?f.Task=chokudai003_a&desc=true&orderBy=score">chokudai003</a></td>
+          <td><a href="https://atcoder.jp/contests/chokudai003/submissions?f.Task=chokudai003_a&desc=true&orderBy=score">A - ○×ブロック</a></td>
+          <td>8363</td>
+        </tr>
+        <tr>
+          <td rowspan="11" class="top-aligned">2</td>
+          <td rowspan="11" class="top-aligned"><a href="https://atcoder.jp/users/bowwowforeach/?contestType=heuristic">bowwowforeach</a></td>
+          <td rowspan="11" class="top-aligned">11</td>
+          <td><a href="https://atcoder.jp/contests/ahc026/standings/extended">ahc026</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc026/standings/extended">Stack of Boxes</a></td>
+          <td>1430506</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/ahc022/standings/extended">ahc022</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc022/standings/extended">Exploring Another Space</a></td>
+          <td>46514810574</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/ahc020/standings/extended">ahc020</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc020/standings/extended">Broadcasting</a></td>
+          <td>518530740</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/ahc017/standings/extended">ahc017</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc017/standings/extended">Road Repair</a></td>
+          <td>49783969788</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/ahc014/standings/extended">ahc014</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc014/standings/extended">RectJoin</a></td>
+          <td>80607473</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/ahc013/standings/extended">ahc013</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc013/standings/extended">Server Room</a></td>
+          <td>407594</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/newjudge-2308-heuristic/standings/extended">newjudge-2308-heuristic</a></td>
+          <td><a href="https://atcoder.jp/contests/newjudge-2308-heuristic/standings/extended">AtCoder Contest Scheduling (Online Version)</a></td>
+          <td>49596975454</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/toyota-hc-2023spring/standings/extended">toyota-hc-2023spring</a></td>
+          <td><a href="https://atcoder.jp/contests/toyota-hc-2023spring/standings/extended">Container Loading</a></td>
+          <td>48226618604</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/atcoder11live/submissions?f.Task=atcoder11live_a&desc=true&orderBy=score">atcoder11live</a></td>
+          <td><a href="https://atcoder.jp/contests/atcoder11live/submissions?f.Task=atcoder11live_a&desc=true&orderBy=score">A - Turn Right</a></td>
+          <td>39028842</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/asprocon9/submissions?f.Task=asprocon9_a&desc=true&orderBy=score">asprocon9</a></td>
+          <td><a href="https://atcoder.jp/contests/asprocon9/submissions?f.Task=asprocon9_a&desc=true&orderBy=score">A - Shift Scheduling</a></td>
+          <td>161467260146</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/asprocon8/submissions?f.Task=asprocon8_a&desc=true&orderBy=score">asprocon8</a></td>
+          <td><a href="https://atcoder.jp/contests/asprocon8/submissions?f.Task=asprocon8_a&desc=true&orderBy=score">A - Automated Painting Line</a></td>
+          <td>19845945815</td>
+        </tr>
+        <tr>
+          <td rowspan="5" class="top-aligned">3</td>
+          <td rowspan="5" class="top-aligned"><a href="https://atcoder.jp/users/wata_admin/?contestType=heuristic">wata_admin</a></td>
+          <td rowspan="5" class="top-aligned">5</td>
+          <td><a href="https://atcoder.jp/contests/ahc030/standings/extended">ahc030</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc030/standings/extended">Polyomino Mining</a></td>
+          <td>41690791879</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/ahc025/standings/extended">ahc025</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc025/standings/extended">Balancing by Balance</a></td>
+          <td>99315660690</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/ahc007/standings/extended">ahc007</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc007/standings/extended">Online MST</a></td>
+          <td>14255644618</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/future-contest-2021-final/standings/extended">future-contest-2021-final</a></td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2021-final/standings/extended">マイニング</a></td>
+          <td>3503497</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/future-contest-2022-final-open/submissions?f.Task=future_contest_2022_final_a&desc=true&orderBy=score">future-contest-2022-final-open</a></td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2022-final-open/submissions?f.Task=future_contest_2022_final_a&desc=true&orderBy=score">A - Code Golf for Robot Vacuums</a></td>
+          <td>65871276</td>
+        </tr>
+        <tr>
+          <td rowspan="5" class="top-aligned">3</td>
+          <td rowspan="5" class="top-aligned"><a href="https://atcoder.jp/users/C7BMkOO7Qbmcwck7/?contestType=heuristic">C7BMkOO7Qbmcwck7</a></td>
+          <td rowspan="5" class="top-aligned">5</td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2020-final-2-open/submissions?f.Task=future_contest_2020_final_2_a&desc=true&orderBy=score">future-contest-2020-final-2-open</a></td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2020-final-2-open/submissions?f.Task=future_contest_2020_final_2_a&desc=true&orderBy=score">A - 千の木2</a></td>
+          <td>5000000</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/future-contest-2018-qual/submissions?f.Task=future_contest_2018_qual_a&desc=true&orderBy=score">future-contest-2018-qual</a></td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2018-qual/submissions?f.Task=future_contest_2018_qual_a&desc=true&orderBy=score">A - 山型足し算</a></td>
+          <td>9999177847</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2019-final-open/submissions?f.Task=rco_contest_2019_final_a&desc=true&orderBy=score">rco-contest-2019-final-open</a></td>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2019-final-open/submissions?f.Task=rco_contest_2019_final_a&desc=true&orderBy=score">A - めくってそろえる</a></td>
+          <td>919289</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2019-qual/submissions?f.Task=rco_contest_2019_qual_b&desc=true&orderBy=score">rco-contest-2019-qual</a></td>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2019-qual/submissions?f.Task=rco_contest_2019_qual_b&desc=true&orderBy=score">B - ファーマーXの収穫計画</a></td>
+          <td>669602</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/chokudai004/submissions?f.Task=chokudai004_a&desc=true&orderBy=score">chokudai004</a></td>
+          <td><a href="https://atcoder.jp/contests/chokudai004/submissions?f.Task=chokudai004_a&desc=true&orderBy=score">A - Just Write Numbers!</a></td>
+          <td>1680418</td>
+        </tr>
+        <tr>
+          <td rowspan="4" class="top-aligned">5</td>
+          <td rowspan="4" class="top-aligned"><a href="https://atcoder.jp/users/tomerun/?contestType=heuristic">tomerun</a></td>
+          <td rowspan="4" class="top-aligned">4</td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2020-final-open/submissions?f.Task=future_contest_2020_final_a&desc=true&orderBy=score">future-contest-2020-final-open</a></td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2020-final-open/submissions?f.Task=future_contest_2020_final_a&desc=true&orderBy=score">A - 千の木</a></td>
+          <td>5000000</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/rcl-contest-2020-qual/submissions?f.Task=rcl_contest_2020_qual_b&desc=true&orderBy=score">rcl-contest-2020-qual</a></td>
+          <td><a href="https://atcoder.jp/contests/rcl-contest-2020-qual/submissions?f.Task=rcl_contest_2020_qual_b&desc=true&orderBy=score">B - イラストレーターXと不思議なペン</a></td>
+          <td>106075</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2018-final/submissions?f.Task=rco_contest_2018_final_a&desc=true&orderBy=score">rco-contest-2018-final</a></td>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2018-final/submissions?f.Task=rco_contest_2018_final_a&desc=true&orderBy=score">A - ぐるぐる庭園</a></td>
+          <td>786744</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2018-final/submissions?f.Task=rco_contest_2018_final_b&desc=true&orderBy=score">rco-contest-2018-final</a></td>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2018-final/submissions?f.Task=rco_contest_2018_final_b&desc=true&orderBy=score">B - くるくる寿司</a></td>
+          <td>478027</td>
+        </tr>
+        <tr>
+          <td rowspan="4" class="top-aligned">5</td>
+          <td rowspan="4" class="top-aligned"><a href="https://atcoder.jp/users/saharan/?contestType=heuristic">saharan</a></td>
+          <td rowspan="4" class="top-aligned">4</td>
+          <td><a href="https://atcoder.jp/contests/rcl-contest-2021/submissions?f.Task=rcl_contest_2021_b&desc=true&orderBy=score">rcl-contest-2021</a></td>
+          <td><a href="https://atcoder.jp/contests/rcl-contest-2021/submissions?f.Task=rcl_contest_2021_b&desc=true&orderBy=score">B - マッサージチェア2021</a></td>
+          <td>214739</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2019-final/submissions?f.Task=rco_contest_2019_final_a&desc=true&orderBy=score">rco-contest-2019-final</a></td>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2019-final/submissions?f.Task=rco_contest_2019_final_a&desc=true&orderBy=score">A - めくってそろえる</a></td>
+          <td>922872</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2019-final/submissions?f.Task=rco_contest_2019_final_b&desc=true&orderBy=score">rco-contest-2019-final</a></td>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2019-final/submissions?f.Task=rco_contest_2019_final_b&desc=true&orderBy=score">B - まわしてそろえる</a></td>
+          <td>59842</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2017-final/submissions?f.Task=rco_contest_2017_final_b&desc=true&orderBy=score">rco-contest-2017-final</a></td>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2017-final/submissions?f.Task=rco_contest_2017_final_b&desc=true&orderBy=score">B - 日本橋大渋滞</a></td>
+          <td>1126522</td>
+        </tr>
+        <tr>
+          <td rowspan="3" class="top-aligned">7</td>
+          <td rowspan="3" class="top-aligned"><a href="https://atcoder.jp/users/iehn/?contestType=heuristic">iehn</a></td>
+          <td rowspan="3" class="top-aligned">3</td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2020-final-2/submissions?f.Task=future_contest_2020_final_2_a&desc=true&orderBy=score">future-contest-2020-final-2</a></td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2020-final-2/submissions?f.Task=future_contest_2020_final_2_a&desc=true&orderBy=score">A - 千の木2</a></td>
+          <td>5000000</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/rcl-contest-2021/submissions?f.Task=rcl_contest_2021_a&desc=true&orderBy=score">rcl-contest-2021</a></td>
+          <td><a href="https://atcoder.jp/contests/rcl-contest-2021/submissions?f.Task=rcl_contest_2021_a&desc=true&orderBy=score">A - 魔法使いXの戦い</a></td>
+          <td>358011</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/rcl-contest-2020-final-open/submissions?f.Task=rcl_contest_2020_final_b&desc=true&orderBy=score">rcl-contest-2020-final-open</a></td>
+          <td><a href="https://atcoder.jp/contests/rcl-contest-2020-final-open/submissions?f.Task=rcl_contest_2020_final_b&desc=true&orderBy=score">B - ハイパーお掃除ロボット</a></td>
+          <td>1319594</td>
+        </tr>
+        <tr>
+          <td rowspan="3" class="top-aligned">7</td>
+          <td rowspan="3" class="top-aligned"><a href="https://atcoder.jp/users/ats5515/?contestType=heuristic">ats5515</a></td>
+          <td rowspan="3" class="top-aligned">3</td>
+          <td><a href="https://atcoder.jp/contests/caddi2019/submissions?f.Task=caddi2019_a&desc=true&orderBy=score">caddi2019</a></td>
+          <td><a href="https://atcoder.jp/contests/caddi2019/submissions?f.Task=caddi2019_a&desc=true&orderBy=score">A - 球の詰め込み</a></td>
+          <td>541206137</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/future-contest-2020-qual/submissions?f.Task=future_contest_2020_qual_a&desc=true&orderBy=score">future-contest-2020-qual</a></td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2020-qual/submissions?f.Task=future_contest_2020_qual_a&desc=true&orderBy=score">A - ロボットの誘導</a></td>
+          <td>4970775</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/rcl-contest-2020-final/submissions?f.Task=rcl_contest_2020_final_b&desc=true&orderBy=score">rcl-contest-2020-final</a></td>
+          <td><a href="https://atcoder.jp/contests/rcl-contest-2020-final/submissions?f.Task=rcl_contest_2020_final_b&desc=true&orderBy=score">B - ハイパーお掃除ロボット</a></td>
+          <td>1313743</td>
+        </tr>
+        <tr>
+          <td rowspan="3" class="top-aligned">7</td>
+          <td rowspan="3" class="top-aligned"><a href="https://atcoder.jp/users/eijirou/?contestType=heuristic">eijirou</a></td>
+          <td rowspan="3" class="top-aligned">3</td>
+          <td><a href="https://atcoder.jp/contests/ahc010/standings/extended">ahc010</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc010/standings/extended">Loop Lines</a></td>
+          <td>21132560</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/ahc006/standings/extended">ahc006</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc006/standings/extended">Food Delivery</a></td>
+          <td>2288561</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/chokudai005/submissions?f.Task=chokudai005_a&desc=true&orderBy=score">chokudai005</a></td>
+          <td><a href="https://atcoder.jp/contests/chokudai005/submissions?f.Task=chokudai005_a&desc=true&orderBy=score">A - カラフルパネル</a></td>
+          <td>49994074</td>
+        </tr>
+        <tr>
+          <td rowspan="2" class="top-aligned">10</td>
+          <td rowspan="2" class="top-aligned"><a href="https://atcoder.jp/users/hakomo/?contestType=heuristic">hakomo</a></td>
+          <td rowspan="2" class="top-aligned">2</td>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2019-qual/submissions?f.Task=rco_contest_2019_qual_a&desc=true&orderBy=score">rco-contest-2019-qual</a></td>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2019-qual/submissions?f.Task=rco_contest_2019_qual_a&desc=true&orderBy=score">A - ツーリストXの旅行計画</a></td>
+          <td>7750471</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/chokudai001/submissions?f.Task=chokudai_001_a&desc=true&orderBy=score">chokudai001</a></td>
+          <td><a href="https://atcoder.jp/contests/chokudai001/submissions?f.Task=chokudai_001_a&desc=true&orderBy=score">A - 高橋君の山崩しゲーム</a></td>
+          <td>899353</td>
+        </tr>
+        <tr>
+          <td rowspan="2" class="top-aligned">10</td>
+          <td rowspan="2" class="top-aligned"><a href="https://atcoder.jp/users/Aquarius/?contestType=heuristic">Aquarius</a></td>
+          <td rowspan="2" class="top-aligned">2</td>
+          <td><a href="https://atcoder.jp/contests/ahc012/standings/extended">ahc012</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc012/standings/extended">AtCoder 10th Anniversary</a></td>
+          <td>99924510</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/future-contest-2021-qual/standings/extended">future-contest-2021-qual</a></td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2021-qual/standings/extended">カードの回収</a></td>
+          <td>170707</td>
+        </tr>
+        <tr>
+          <td rowspan="2" class="top-aligned">10</td>
+          <td rowspan="2" class="top-aligned"><a href="https://atcoder.jp/users/cuthbert/?contestType=heuristic">cuthbert</a></td>
+          <td rowspan="2" class="top-aligned">2</td>
+          <td><a href="https://atcoder.jp/contests/ahc027/standings/extended">ahc027</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc027/standings/extended">Recurring Cleaning Route</a></td>
+          <td>49822514643</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/rcl-contest-2020-qual/submissions?f.Task=rcl_contest_2020_qual_a&desc=true&orderBy=score">rcl-contest-2020-qual</a></td>
+          <td><a href="https://atcoder.jp/contests/rcl-contest-2020-qual/submissions?f.Task=rcl_contest_2020_qual_a&desc=true&orderBy=score">A - ゲーマーXとモノス大会</a></td>
+          <td>220220</td>
+        </tr>
+        <tr>
+          <td rowspan="2" class="top-aligned">10</td>
+          <td rowspan="2" class="top-aligned"><a href="https://atcoder.jp/users/Nyanyan/?contestType=heuristic">Nyanyan</a></td>
+          <td rowspan="2" class="top-aligned">2</td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2018-final-open/submissions?f.Task=future_contest_2018_final_a&desc=true&orderBy=score">future-contest-2018-final-open</a></td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2018-final-open/submissions?f.Task=future_contest_2018_final_a&desc=true&orderBy=score">A - ツカモの栽培</a></td>
+          <td>94823794</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/rcl-contest-2020-final-open/submissions?f.Task=rcl_contest_2020_final_a&desc=true&orderBy=score">rcl-contest-2020-final-open</a></td>
+          <td><a href="https://atcoder.jp/contests/rcl-contest-2020-final-open/submissions?f.Task=rcl_contest_2020_final_a&desc=true&orderBy=score">A - ハイパー覆面すごろく</a></td>
+          <td>50928359</td>
+        </tr>
+        <tr>
+          <td rowspan="2" class="top-aligned">10</td>
+          <td rowspan="2" class="top-aligned"><a href="https://atcoder.jp/users/Jirotech/?contestType=heuristic">Jirotech</a></td>
+          <td rowspan="2" class="top-aligned">2</td>
+          <td><a href="https://atcoder.jp/contests/asprocon7/submissions?f.Task=asprocon7_a&desc=true&orderBy=score">asprocon7</a></td>
+          <td><a href="https://atcoder.jp/contests/asprocon7/submissions?f.Task=asprocon7_a&desc=true&orderBy=score">A - Car Assembly Line</a></td>
+          <td>1002714217</td>
+        </tr>
+        <tr>
+          <td><a href="https://atcoder.jp/contests/rcl-contest-2021-long/submissions?f.Task=rcl_contest_2021_long_a&desc=true&orderBy=score">rcl-contest-2021-long</a></td>
+          <td><a href="https://atcoder.jp/contests/rcl-contest-2021-long/submissions?f.Task=rcl_contest_2021_long_a&desc=true&orderBy=score">A - Farm King X</a></td>
+          <td>5651440905</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/gasin/?contestType=heuristic">gasin</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/ahc028/standings/extended">ahc028</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc028/standings/extended">Lucky Words</a></td>
+          <td>1108910</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/colun/?contestType=heuristic">colun</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/chokudai002/submissions?f.Task=chokudai002_a&desc=true&orderBy=score">chokudai002</a></td>
+          <td><a href="https://atcoder.jp/contests/chokudai002/submissions?f.Task=chokudai002_a&desc=true&orderBy=score">A - 約数をたくさんつくろう！</a></td>
+          <td>43242</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/koyumeishi/?contestType=heuristic">koyumeishi</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2017-final-open/submissions?f.Task=rco_contest_2017_final_b&desc=true&orderBy=score">rco-contest-2017-final-open</a></td>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2017-final-open/submissions?f.Task=rco_contest_2017_final_b&desc=true&orderBy=score">B - 日本橋大渋滞</a></td>
+          <td>1401683</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/mamekin/?contestType=heuristic">mamekin</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2017-final/submissions?f.Task=rco_contest_2017_final_a&desc=true&orderBy=score">rco-contest-2017-final</a></td>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2017-final/submissions?f.Task=rco_contest_2017_final_a&desc=true&orderBy=score">A - 石油王Xの憂鬱</a></td>
+          <td>7405332</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/WA_TLE/?contestType=heuristic">WA_TLE</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2019-final/submissions?f.Task=future_contest_2019_final_a&desc=true&orderBy=score">future-contest-2019-final</a></td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2019-final/submissions?f.Task=future_contest_2019_final_a&desc=true&orderBy=score">A - モンスターテイマー</a></td>
+          <td>431173598.31</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/ichyo/?contestType=heuristic">ichyo</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2019-final-open/submissions?f.Task=future_contest_2019_final_a&desc=true&orderBy=score">future-contest-2019-final-open</a></td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2019-final-open/submissions?f.Task=future_contest_2019_final_a&desc=true&orderBy=score">A - モンスターテイマー</a></td>
+          <td>425798221.84</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/not/?contestType=heuristic">not</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2019-qual/submissions?f.Task=future_contest_2019_qual_a&desc=true&orderBy=score">future-contest-2019-qual</a></td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2019-qual/submissions?f.Task=future_contest_2019_qual_a&desc=true&orderBy=score">A - ばらばらロボット</a></td>
+          <td>142086</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/packer_jp/?contestType=heuristic">packer_jp</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2018-final/submissions?f.Task=future_contest_2018_final_a&desc=true&orderBy=score">future-contest-2018-final</a></td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2018-final/submissions?f.Task=future_contest_2018_final_a&desc=true&orderBy=score">A - ツカモの栽培</a></td>
+          <td>75143786</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/olphe/?contestType=heuristic">olphe</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/future-meets-you-contest-2018-open/submissions?f.Task=future2018career_a&desc=true&orderBy=score">future-meets-you-contest-2018-open</a></td>
+          <td><a href="https://atcoder.jp/contests/future-meets-you-contest-2018-open/submissions?f.Task=future2018career_a&desc=true&orderBy=score">A - 増減ソート</a></td>
+          <td>35299861248</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/chokudai/?contestType=heuristic">chokudai</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2018-final-open/submissions?f.Task=rco_contest_2018_final_b&desc=true&orderBy=score">rco-contest-2018-final-open</a></td>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2018-final-open/submissions?f.Task=rco_contest_2018_final_b&desc=true&orderBy=score">B - くるくる寿司</a></td>
+          <td>472777</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/yowa/?contestType=heuristic">yowa</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2018-final-open/submissions?f.Task=rco_contest_2018_final_a&desc=true&orderBy=score">rco-contest-2018-final-open</a></td>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2018-final-open/submissions?f.Task=rco_contest_2018_final_a&desc=true&orderBy=score">A - ぐるぐる庭園</a></td>
+          <td>749397</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/yosupo/?contestType=heuristic">yosupo</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/rcl-contest-2020-final/submissions?f.Task=rcl_contest_2020_final_a&desc=true&orderBy=score">rcl-contest-2020-final</a></td>
+          <td><a href="https://atcoder.jp/contests/rcl-contest-2020-final/submissions?f.Task=rcl_contest_2020_final_a&desc=true&orderBy=score">A - ハイパー覆面すごろく</a></td>
+          <td>60392638</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/kuuso/?contestType=heuristic">kuuso</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2019-final-open/submissions?f.Task=rco_contest_2019_final_b&desc=true&orderBy=score">rco-contest-2019-final-open</a></td>
+          <td><a href="https://atcoder.jp/contests/rco-contest-2019-final-open/submissions?f.Task=rco_contest_2019_final_b&desc=true&orderBy=score">B - まわしてそろえる</a></td>
+          <td>56788</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/starpentagon/?contestType=heuristic">starpentagon</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/ahc029/standings/extended">ahc029</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc029/standings/extended">Business Simulation Game</a></td>
+          <td>35081861889</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/sugim48/?contestType=heuristic">sugim48</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/ahc023/standings/extended">ahc023</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc023/standings/extended">Crops on Grid</a></td>
+          <td>45076575</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/imazato/?contestType=heuristic">imazato</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/ahc021/standings/extended">ahc021</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc021/standings/extended">Pyramid Sorting</a></td>
+          <td>13691670</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/USA/?contestType=heuristic">USA</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/ahc019/standings/extended">ahc019</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc019/standings/extended">Silhouette Block Puzzle Creation</a></td>
+          <td>46988616563</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/Psyho/?contestType=heuristic">Psyho</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/ahc018/standings/extended">ahc018</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc018/standings/extended">Excavation</a></td>
+          <td>45251804764</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/nagiss/?contestType=heuristic">nagiss</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/ahc016/standings/extended">ahc016</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc016/standings/extended">Graphorean</a></td>
+          <td>47255667609</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/saitodevel01/?contestType=heuristic">saitodevel01</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/ahc015/standings/extended">ahc015</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc015/standings/extended">Halloween Candy</a></td>
+          <td>168471063</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/cz123/?contestType=heuristic">cz123</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/ahc009/standings/extended">ahc009</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc009/standings/extended">Robust Memory of Commuting Routes</a></td>
+          <td>7690512830</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/fileerror/?contestType=heuristic">fileerror</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/ahc004/standings/extended">ahc004</a></td>
+          <td><a href="https://atcoder.jp/contests/ahc004/standings/extended">Alien's Genome Assembly</a></td>
+          <td>8705961576</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/terry_u16/?contestType=heuristic">terry_u16</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/toyota2023summer-final/standings/extended">toyota2023summer-final</a></td>
+          <td><a href="https://atcoder.jp/contests/toyota2023summer-final/standings/extended">Transit Warehouse</a></td>
+          <td>299238709281</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/bin101/?contestType=heuristic">bin101</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/toyota2023summer-final-open/standings/extended">toyota2023summer-final-open</a></td>
+          <td><a href="https://atcoder.jp/contests/toyota2023summer-final-open/standings/extended">Transit Warehouse</a></td>
+          <td>294415918720</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/eivour/?contestType=heuristic">eivour</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2022-final/standings/extended">future-contest-2022-final</a></td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2022-final/standings/extended">Code Golf for Robot Vacuums</a></td>
+          <td>71787653</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/wleite/?contestType=heuristic">wleite</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/hokudai-hitachi2022/submissions?f.Task=hokudai_hitachi2022_b&desc=true&orderBy=score">hokudai-hitachi2022</a></td>
+          <td><a href="https://atcoder.jp/contests/hokudai-hitachi2022/submissions?f.Task=hokudai_hitachi2022_b&desc=true&orderBy=score">B - Dynamic Scheduling of Agricultural Machinery Sharing</a></td>
+          <td>24661836093876</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/Shun_PI/?contestType=heuristic">Shun_PI</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/stage0-2021/submissions?f.Task=stage0_2021_a&desc=true&orderBy=score">stage0-2021</a></td>
+          <td><a href="https://atcoder.jp/contests/stage0-2021/submissions?f.Task=stage0_2021_a&desc=true&orderBy=score">A - Patrolling</a></td>
+          <td>21505829</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/omi/?contestType=heuristic">omi</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2023-final-open/submissions?f.Task=future_contest_2023_final_a&desc=true&orderBy=score">future-contest-2023-final-open</a></td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2023-final-open/submissions?f.Task=future_contest_2023_final_a&desc=true&orderBy=score">A - Dowsing Rod</a></td>
+          <td>1554625</td>
+        </tr>
+        <tr>
+          <td rowspan="1" class="top-aligned">15</td>
+          <td rowspan="1" class="top-aligned"><a href="https://atcoder.jp/users/spica314/?contestType=heuristic">spica314</a></td>
+          <td rowspan="1" class="top-aligned">1</td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2020-final/submissions?f.Task=future_contest_2020_final_a&desc=true&orderBy=score">future-contest-2020-final</a></td>
+          <td><a href="https://atcoder.jp/contests/future-contest-2020-final/submissions?f.Task=future_contest_2020_final_a&desc=true&orderBy=score">A - 千の木</a></td>
+          <td>5000000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
